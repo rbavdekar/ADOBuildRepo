@@ -10,7 +10,7 @@ pool:
   name: TestAgentPool
 
 steps:
-- script: echo Hello, world!
+- script: echo Hello, whhjorld!
   displayName: 'Run a one-line script'
 
 - script: |
@@ -22,13 +22,13 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      # Write your PowerShell commands here.
+      # Write your PowerShell comhjbdsjdsbmands here.
       
       Write-Host "Hello World"
       Write-Host 'Hi'
       $v= $env:SYSTEM_ACCESSTOKEN
 
-      $msiResponse = Invoke-WebRequest -Uri "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://vault.azure.net" `
+      $msiResponse = Invoke-WebRequest -Uri "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com/" `
               -Headers @{Metadata = "true" } -UseBasicParsing
       $msiContent = $msiResponse.Content | ConvertFrom-Json
       $access_token = $msiContent.access_token
